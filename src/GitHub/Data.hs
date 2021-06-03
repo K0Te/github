@@ -19,6 +19,7 @@ module GitHub.Data (
     mkCommitName,
     fromUserName,
     fromOrganizationName,
+    mkWorkflowName,
     -- ** Id
     Id,
     mkId,
@@ -95,6 +96,7 @@ import GitHub.Data.Statuses
 import GitHub.Data.Teams
 import GitHub.Data.URL
 import GitHub.Data.Webhooks
+import GitHub.Data.Actions
 import GitHub.Data.Webhooks.Validate
 
 mkOwnerId :: Int -> Id Owner
@@ -141,3 +143,10 @@ fromOrganizationId = Id . untagId
 
 fromUserId :: Id User -> Id Owner
 fromUserId = Id . untagId
+
+
+mkWorkflowId :: Int -> Id Workflow
+mkWorkflowId = Id
+
+mkWorkflowName :: Text -> Name Workflow
+mkWorkflowName = N

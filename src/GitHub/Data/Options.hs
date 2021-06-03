@@ -607,3 +607,8 @@ optionsAnyAssignee = IssueRepoMod $ \opts ->
 optionsNoAssignee :: IssueRepoMod
 optionsNoAssignee = IssueRepoMod $ \opts ->
     opts { issueRepoOptionsAssignee = FilterNone }
+
+-------------------------------------------------------------------------------
+-- Actions
+-------------------------------------------------------------------------------
+
