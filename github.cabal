@@ -85,6 +85,7 @@ library
     GitHub
     GitHub.Auth
     GitHub.Data
+    GitHub.Data.Actions
     GitHub.Data.Activities
     GitHub.Data.Comments
     GitHub.Data.Content
