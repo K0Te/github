@@ -5,10 +5,10 @@
 --
 module GitHub.Data.Actions (
     ActionWorkflow(..),
-    ActionWorkflowResult,
-    ActionWorkflowRun,
+    ActionWorkflowResult(..),
+    ActionWorkflowRun(..),
     Workflow,
-    ActionWorkflowRunResult,
+    ActionWorkflowRunResult(..),
     CreateWorkflowDispatchEvent(..),
     ) where
 
