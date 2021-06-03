@@ -20,6 +20,9 @@ module GitHub.Data (
     fromUserName,
     fromOrganizationName,
     mkWorkflowName,
+    mkWorkflowId,
+    mkWorkflowRunId,
+    mkWorkflowRunName,
     -- ** Id
     Id,
     mkId,
@@ -150,3 +153,9 @@ mkWorkflowId = Id
 
 mkWorkflowName :: Text -> Name Workflow
 mkWorkflowName = N
+
+mkWorkflowRunId :: Int -> Id ActionWorkflowRun
+mkWorkflowRunId = Id
+
+mkWorkflowRunName :: Text -> Name ActionWorkflowRun
+mkWorkflowRunName = N

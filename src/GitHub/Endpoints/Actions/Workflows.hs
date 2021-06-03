@@ -9,6 +9,7 @@ module GitHub.Endpoints.Actions.Workflows (
     workflowsForR,
     workflowRunsForR,
     createWorkflowDispatchEventR,
+    workflowRunForR,
     module GitHub.Data
     ) where
 
@@ -51,3 +52,13 @@ createWorkflowDispatchEventR :: (ToJSON a) => Name Owner
                    -> GenRequest 'MtUnit 'RW ()
 createWorkflowDispatchEventR user repo workflowId cwde =
     Command Post ["repos", toPathPart user, toPathPart repo, "actions", "workflows", toPathPart workflowId, "dispatches"] (encode cwde)
+
+
+workflowRunForR
+    :: Name Owner
+    -> Name Repo
+    -> Id ActionWorkflowRun 
+    -> Request k (ActionWorkflowRun)
+workflowRunForR user repo runId = query
+    ["repos", toPathPart user, toPathPart repo, "actions", "runs", toPathPart runId]
+    []
