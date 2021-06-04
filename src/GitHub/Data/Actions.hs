@@ -64,6 +64,7 @@ data ActionWorkflowRun = ActionWorkflowRun
     , actionWorkflowRunUpdatedAt :: !UTCTime
     -- , actionWorkflowRunRepo :: !Repo
     , actionWorkflowRunHeadCommit :: !RunCommit
+    , actionWorkflowRunConclusion :: !(Maybe Text)
     } deriving (Show, Data, Typeable, Eq, Ord, Generic)
 
 data ActionWorkflowResult entity = ActionWorkflowResult
@@ -132,6 +133,7 @@ instance FromJSON ActionWorkflowRun where
         <*> o .: "updated_at"
         -- <*> o .: "repository"
         <*> o .: "head_commit"
+        <*> o .:? "conclusion"
 
 
 instance ToJSON a => ToJSON (CreateWorkflowDispatchEvent a) where
