@@ -60,6 +60,7 @@ data ActionWorkflowRun = ActionWorkflowRun
     ,  actionWorkflowRunHeadSha :: !Text
     , actionWorkflowRunStatus :: !Text
     , actionWorkflowRunUrl :: !URL
+    , actionWorkflowRunHtmlUrl :: !URL
     , actionWorkflowRunCreatedAt :: !UTCTime
     , actionWorkflowRunUpdatedAt :: !UTCTime
     -- , actionWorkflowRunRepo :: !Repo
@@ -129,6 +130,7 @@ instance FromJSON ActionWorkflowRun where
         <*> o .: "head_sha"
         <*> o .: "status"
         <*> o .: "url"
+        <*> o .: "html_url"
         <*> o .: "created_at"
         <*> o .: "updated_at"
         -- <*> o .: "repository"
